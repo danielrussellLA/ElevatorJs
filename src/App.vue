@@ -1,17 +1,25 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Elevator :floors="floors"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Elevator from './components/Elevator.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Elevator
+  },
+  data() {
+      return {
+          floors: [
+              {level: 2, isPressed: false},
+              {level: 1, isPressed: false},
+              {level: 0, isPressed: false},
+          ]
+      }
   }
 }
 </script>
